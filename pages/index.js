@@ -8,7 +8,6 @@ export default function Home() {
             <Head>
                 <title>LinkIt</title>
                 <meta name="description" content="Manage your links with linkit" />
-                <link rel="icon" href="/linkit.svg" />
             </Head>
             {/* <Image src={`/linkit.svg`} alt="linkitlogo" width={200} height={200}></Image> */}
             {/* <Landingpage /> */}
