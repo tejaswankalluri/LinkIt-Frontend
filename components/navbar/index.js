@@ -17,7 +17,7 @@ function Navbar() {
                         <a href="">Home</a>
                     </ul>
                     <ul>
-                        <a href="">About</a>
+                        <a href="#about">About</a>
                     </ul>
                     <ul>
                         <a href="">Pricing</a>

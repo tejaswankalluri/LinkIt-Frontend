@@ -4,7 +4,7 @@ import HomePage from '../components/home';
 import Image from 'next/image';
 export default function Home() {
     return (
-        <div className="bg-darkbgvoilet h-screen">
+        <div className="bg-darkbgvoilet min-h-screen">
             <Head>
                 <title>LinkIt</title>
                 <meta name="description" content="Manage your links with linkit" />
