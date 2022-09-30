@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import axios from 'axios';
+import keys from '../../config/env';
 
 const signupValidator = Yup.object({
     email: Yup.string()
@@ -8,7 +9,7 @@ const signupValidator = Yup.object({
         .test('unique email', 'Email already in use', function (value) {
             return new Promise((resolve, reject) => {
                 axios
-                    .post('http://localhost:8000/api/exist/email', { email: value })
+                    .post(`${keys.host}api/exist/email`, { email: value })
                     .then((res) => {
                         resolve(true);
                     })
@@ -26,7 +27,7 @@ const signupValidator = Yup.object({
         .test('unique username', 'Username already in use', function (value) {
             return new Promise((resolve, reject) => {
                 axios
-                    .post('http://localhost:8000/api/exist/username', { username: value })
+                    .post(`${keys.host}api/exist/username`, { username: value })
                     .then((res) => {
                         resolve(true);
                     })

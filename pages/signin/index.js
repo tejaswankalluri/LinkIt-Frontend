@@ -21,7 +21,7 @@ function Signin() {
                 .post(`${keys.host}api/login`, values)
                 .then((res) => {
                     if (res.statusText === 'error') toast('some error occured');
-                    else if (res.statusText === 'OK') {
+                    else if (res.status === 200) {
                         toast('Login sucessfull');
                         localStorage.setItem('token', res.data.access_token);
                         formik.setSubmitting(false);

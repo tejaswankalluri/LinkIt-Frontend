@@ -22,7 +22,7 @@ function Signup() {
                 .post(`${keys.host}api/signup`, values)
                 .then((res) => {
                     if (res.statusText === 'error') toast('unable to create account');
-                    else if (res.statusText === 'OK') {
+                    else if (res.status === 200) {
                         toast('account created');
                         localStorage.setItem('token', res.data.access_token);
                         formik.setSubmitting(false);
@@ -139,7 +139,7 @@ function Signup() {
                                 <button
                                     type="submit"
                                     className="w-full text-white bg-voilet hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center disabled:bg-slate-400 disabled:cursor-not-allowed"
-                                    disabled={!formik.isValid}
+                                    disabled={!formik.isValid || formik.isSubmitting}
                                 >
                                     {formik.isSubmitting ? (
                                         <svg
