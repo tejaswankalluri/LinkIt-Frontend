@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 function Navbar() {
+    const [login, setLogin] = useState(false);
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) setLogin(true);
+    }, []);
     return (
         <div className="bg-[#403359]">
             <nav className="container mx-auto max-h-36 flex items-center justify-between text-lightpurple py-4">
@@ -22,8 +27,10 @@ function Navbar() {
                     <ul>
                         <a href="">Pricing</a>
                     </ul>
-                    <Link href="/signin">
-                        <button className="border-none bg-voilet py-2 px-5 rounded-md text-white">Login</button>
+                    <Link href={login ? '/dashboard' : '/signin'}>
+                        <button className="border-none bg-voilet py-2 px-5 rounded-md text-white">
+                            {login ? 'Dashborad' : 'Login'}
+                        </button>
                     </Link>
                 </div>
             </nav>

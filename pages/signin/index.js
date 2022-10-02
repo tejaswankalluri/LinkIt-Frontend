@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useFormik } from 'formik';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import keys from '../../config/env';
-
+import Router from 'next/router';
 import { signinValidator } from '../../validation/auth/signin';
 import Navbar from '../../components/navbar';
 
 function Signin() {
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) Router.push('/dashboard');
+    }, []);
+
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -22,9 +27,9 @@ function Signin() {
                 .then((res) => {
                     if (res.statusText === 'error') toast('some error occured');
                     else if (res.status === 200) {
-                        toast('Login sucessfull');
                         localStorage.setItem('token', res.data.access_token);
                         formik.setSubmitting(false);
+                        Router.push('/dashboard');
                     }
                 })
                 .catch((err) => {

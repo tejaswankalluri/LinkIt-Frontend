@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useFormik } from 'formik';
 import { signupValidator } from '../../validation/auth/signup';
 import Navbar from '../../components/navbar';
@@ -7,7 +7,12 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios';
 import keys from '../../config/env';
+import Router from 'next/router';
 function Signup() {
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token) Router.push('/dashboard');
+    }, []);
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -26,6 +31,7 @@ function Signup() {
                         toast('account created');
                         localStorage.setItem('token', res.data.access_token);
                         formik.setSubmitting(false);
+                        Router.push('/dashboard');
                     }
                 })
                 .catch((err) => {
