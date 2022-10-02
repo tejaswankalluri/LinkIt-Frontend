@@ -65,7 +65,7 @@ export async function getServerSideProps(context) {
     const { userid } = context.query;
     let data = null;
     try {
-        const res = await axios.get(`${process.env.VERCEL_URL}/api/user/${userid}`);
+        const res = await axios.get(`https://linkit1.vercel.app/api/user/{userid}`);
         data = res.data;
     } catch (err) {
         console.log(err);
