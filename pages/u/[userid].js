@@ -65,9 +65,11 @@ export async function getServerSideProps(context) {
     const { userid } = context.query;
     let data = null;
     try {
-        const res = await axios.get(`${keys.host}api/user/${userid}`);
+        const res = await axios.get(`${process.env.VERCEL_URL}/api/user/${userid}`);
         data = res.data;
-    } catch (err) {}
+    } catch (err) {
+        console.log(err);
+    }
     return { props: { data } };
 }
 export default LinkitPage;
