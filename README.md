@@ -19,6 +19,6 @@ Linkit manages muliple links of the users as a one page link. This is similar to
 
 ## Tech Stack
 
-**Client:** React, Redux, TailwindCSS
+**Client:** Next.js, TailwindCSS
 
 **Server:** Node, Express, Typescript
