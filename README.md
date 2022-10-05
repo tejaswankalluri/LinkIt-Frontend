@@ -21,4 +21,32 @@ Linkit manages muliple links of the users as a one page link. This is similar to
 
 **Client:** Next.js, TailwindCSS
 
-**Server:** Node, Express, Typescript
+**Server:** Node, Express, Typescript, PostgreSQL - [LinkIt-Backend](https://github.com/tejaswankalluri/LinkIt-Backend)
+
+## Installation
+
+-   First clone this repo
+
+-   Install node in your pc (**version 16**) [Node.js download](https://nodejs.org/)
+
+-   Install yarn
+
+    `npm install -g yarn`
+
+-   Type 👇 in terminal
+
+    `cd LinkIt-Frontend`
+
+-   Create .env and add env from .env.example
+
+-   Type 👇 in terminal To install all packages
+
+    `yarn install`
+
+-   Type 👇 in terminal to start server
+
+    `yarn dev`
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
