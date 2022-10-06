@@ -3,9 +3,9 @@ import Image from 'next/image';
 function Swapcards() {
     return (
         <section className="py-32" id="about">
-            <div className="flex container mx-auto items-center justify-between">
-                <div className="w-1/2">
-                    <p className="font-bold text-white text-5xl leading-tight">
+            <div className="flex container mx-auto items-center justify-center text-center flex-col-reverse md:justify-between md:text-left md:flex-row">
+                <div className="md:w-1/2">
+                    <p className="font-bold text-white text-4xl leading-tight md:text-5xl">
                         Create and customize <br /> your bio link <br />
                         in{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F55555] to-[#FCCF31]">
@@ -30,7 +30,7 @@ function Swapcards() {
                 />
             </div>
 
-            <div className="flex container mx-auto items-center justify-between mt-20">
+            <div className="flex container mx-auto mt-20 items-center justify-center text-center flex-col md:justify-between md:text-left md:flex-row">
                 <Image
                     src={
                         'https://res.cloudinary.com/dvvheza58/image/upload/v1665025107/Linkit_frontend/swapcard2_xancub.svg'
@@ -39,8 +39,8 @@ function Swapcards() {
                     width={500}
                     height={500}
                 />
-                <div className="w-1/2">
-                    <p className="font-bold text-white text-5xl leading-tight">
+                <div className="md:w-1/2">
+                    <p className="font-bold text-white text-4xl leading-tight md:text-5xl">
                         Share your LinkIt
                         <br /> anywhere you like!
                         <br />

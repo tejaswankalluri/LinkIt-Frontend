@@ -33,14 +33,18 @@ function Dashboard() {
             <DashNavbar username={data.username} />
             {data ? (
                 <section className="my-10 container mx-auto">
-                    <div className="text-darkbgvoilet text-5xl font-bold capitalize">Howdy {data.username},</div>
+                    <div className="text-darkbgvoilet text-3xl text-center md:text-5xl font-extrabold capitalize md:text-left">
+                        Howdy {data.username},
+                    </div>
                     <Link href={`/u/${data.username}`}>
-                        <button
-                            type="button"
-                            className="float-right focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
-                        >
-                            Your Public Link
-                        </button>
+                        <div className="flex w-full justify-center mt-10 md:justify-end">
+                            <button
+                                type="button"
+                                className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
+                            >
+                                Your Public Link
+                            </button>
+                        </div>
                     </Link>
                     <Links links={data.links} />
                 </section>

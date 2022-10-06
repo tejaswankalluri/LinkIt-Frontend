@@ -49,14 +49,16 @@ function Links(props) {
 
     return (
         <>
-            <h1 className="text-2xl text-center font-semibold mt-40">Your Links</h1>
-            <button
-                onClick={addlink}
-                type="button"
-                className=" focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
-            >
-                Add link
-            </button>
+            <h1 className="text-2xl text-center font-semibold mt-20">Your Links</h1>
+            <div className="flex w-full justify-center mt-10 md:justify-start">
+                <button
+                    onClick={addlink}
+                    type="button"
+                    className=" focus:outline-none text-white bg-red-600 hover:bg-red-700 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
+                >
+                    Add link
+                </button>
+            </div>
             <div className="grid grid-cols-1 place-items-center md:grid-cols-3 md:gap-4 items-center">
                 {links.map((link, id) => (
                     <LinkCards

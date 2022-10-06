@@ -27,7 +27,6 @@ function LinkCards({ link, editlink, cid, deletelink, cancel }) {
                     className="inline-block text-gray-500  hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg text-sm p-1.5"
                     type="button"
                 >
-                    <span className="sr-only">Open dropdown</span>
                     <svg
                         className="w-6 h-6"
                         aria-hidden="true"

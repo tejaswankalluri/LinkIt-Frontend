@@ -43,7 +43,7 @@ function Signin() {
         <>
             <ToastContainer />
             <Navbar />
-            <section className="bg-darkbgvoilet">
+            <section className="bg-darkbgvoilet min-h-screen">
                 <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
                     <a href="#" className="flex items-center mb-6 text-2xl font-semibold text-gray-900">
                         <img className="w-20 h-10 mr-2" src="/nav_logo.svg" alt="logo" />

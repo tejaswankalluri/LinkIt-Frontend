@@ -6,14 +6,14 @@ function Header() {
             <p className="font-bold bg-gradient-to-r from-[#8BC6EC] to-[#9599E2] rounded-md w-fit px-2 py-1">
                 free forever We are Opensource
             </p>
-            <div className="text-8xl mt-5 text-center font-extrabold text-white text-space tracking-tighter leading-tight">
+            <div className="text-6xl mt-5 text-center font-extrabold text-white text-space tracking-tighter leading-tight md:text-8xl">
                 How About{' '}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#43C5FF] to-[#E520FF]">
                     Managing{' '}
                 </span>
                 <br /> Your Links
             </div>
-            <p className="text-lightpurple font-semibold text-2xl mt-5">
+            <p className="text-lightpurple font-semibold text-md mt-5 md:text-2xl">
                 Managing Social media Links is hard. but not with Linkit, <br /> You will get a one link to share your
                 whole social media
             </p>

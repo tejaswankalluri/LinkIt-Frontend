@@ -3,13 +3,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 function Navbar() {
     const [login, setLogin] = useState(false);
+    const [menuToggle, setMenuToggle] = useState(true);
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) setLogin(true);
     }, []);
     return (
         <div className="bg-[#403359]">
-            <nav className="container mx-auto max-h-36 flex items-center justify-between text-lightpurple py-4">
+            <nav className="p-2 md:p-0 container mx-auto max-h-36 flex items-center justify-between text-lightpurple py-4">
                 <div className="text-2xl cursor-pointer">
                     <Link href="/">
                         <Image
@@ -19,18 +20,27 @@ function Navbar() {
                             height={48}
                         />
                     </Link>
-
-                    {/* <img src="/nav_logo.svg" alt="" /> */}
                 </div>
-                <div className="flex w-80 justify-between items-center cursor-pointer font-semibold">
+                <div
+                    className={
+                        'w-full flex flex-col space-y-5 p-4 text-gray-700 drop-shadow-lg absolute top-20 left-0 bg-white cursor-pointer font-semibold md:flex-row md:bg-transparent md:justify-between md:items-center md:flex md:w-96 md:static md:text-lightpurple md:space-y-0 md:drop-shadow-non' +
+                        (menuToggle ? ' hidden' : '')
+                    }
+                >
                     <ul>
-                        <a href="">Home</a>
+                        <Link href={'/'}>
+                            <a>Home</a>
+                        </Link>
                     </ul>
                     <ul>
-                        <a href="#about">About</a>
+                        <Link href={'/#about'}>
+                            <a>About</a>
+                        </Link>
                     </ul>
                     <ul>
-                        <a href="">Pricing</a>
+                        <Link href={'/#pricing'}>
+                            <a>Pricing</a>
+                        </Link>
                     </ul>
                     <Link href={login ? '/dashboard' : '/signin'}>
                         <button className="border-none bg-voilet py-2 px-5 rounded-md text-white">
@@ -38,6 +48,11 @@ function Navbar() {
                         </button>
                     </Link>
                 </div>
+                <a className="space-y-2 cursor-pointer md:hidden" onClick={() => setMenuToggle(!menuToggle)}>
+                    <div className="w-8 h-0.5 bg-white"></div>
+                    <div className="w-8 h-0.5 bg-white"></div>
+                    <div className="w-8 h-0.5 bg-white"></div>
+                </a>
             </nav>
         </div>
     );

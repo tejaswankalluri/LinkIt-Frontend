@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Router from 'next/router';
 import React, { useState } from 'react';
 import Avatar from 'react-avatar';
+import Image from 'next/image';
 function DashNavbar({ username }) {
     const signout = () => {
         localStorage.removeItem('token');
@@ -12,7 +13,12 @@ function DashNavbar({ username }) {
         <nav className="bg-lightbggrape text-white px-4 py-2.5 shadow-md">
             <div className="flex justify-between items-center container mx-auto z-10">
                 <Link href="/">
-                    <a className="text-2xl font-bold">Linkit</a>
+                    <Image
+                        src="https://res.cloudinary.com/dvvheza58/image/upload/v1665025560/Linkit_frontend/nav_logo_i218sh.svg"
+                        alt="logo"
+                        width={70}
+                        height={40}
+                    />
                 </Link>
                 <div>
                     <button className="" type="button" onClick={() => setDropdown(!dropdown)}>
@@ -27,7 +33,7 @@ function DashNavbar({ username }) {
 
                     <div
                         className={
-                            'z-50 w-40 bg-white rounded divide-y divide-gray-100 shadow  absolute -translate-x-20 translate-y-1 ' +
+                            'z-50 w-40 bg-white rounded divide-y divide-gray-100 shadow  absolute -translate-x-20 translate-y-1 overflow-hidden ' +
                             (dropdown ? '' : 'hidden')
                         }
                     >
