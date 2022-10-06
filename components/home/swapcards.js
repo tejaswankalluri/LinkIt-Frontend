@@ -20,11 +20,25 @@ function Swapcards() {
                         Get started
                     </button>
                 </div>
-                <Image src={'/homepage/swapcard1.svg'} alt="customize your bio link" width={500} height={500} />
+                <Image
+                    src={
+                        'https://res.cloudinary.com/dvvheza58/image/upload/v1665025107/Linkit_frontend/swapcard1_xxpvi8.svg'
+                    }
+                    alt="customize your bio link"
+                    width={500}
+                    height={500}
+                />
             </div>
 
             <div className="flex container mx-auto items-center justify-between mt-20">
-                <Image src={'/homepage/swapcard2.svg'} alt="customize your bio link" width={500} height={500} />
+                <Image
+                    src={
+                        'https://res.cloudinary.com/dvvheza58/image/upload/v1665025107/Linkit_frontend/swapcard2_xancub.svg'
+                    }
+                    alt="customize your bio link"
+                    width={500}
+                    height={500}
+                />
                 <div className="w-1/2">
                     <p className="font-bold text-white text-5xl leading-tight">
                         Share your LinkIt

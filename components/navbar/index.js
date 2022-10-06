@@ -12,7 +12,12 @@ function Navbar() {
             <nav className="container mx-auto max-h-36 flex items-center justify-between text-lightpurple py-4">
                 <div className="text-2xl cursor-pointer">
                     <Link href="/">
-                        <Image src="/nav_logo.svg" alt="logo" width={95} height={48} />
+                        <Image
+                            src="https://res.cloudinary.com/dvvheza58/image/upload/v1665025560/Linkit_frontend/nav_logo_i218sh.svg"
+                            alt="logo"
+                            width={95}
+                            height={48}
+                        />
                     </Link>
 
                     {/* <img src="/nav_logo.svg" alt="" /> */}
