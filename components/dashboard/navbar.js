@@ -15,7 +15,7 @@ function DashNavbar({ username }) {
                     <a className="text-2xl font-bold">Linkit</a>
                 </Link>
                 <div>
-                    <button className="" type="button" onClick={() => setDropdown(dropdown ? false : true)}>
+                    <button className="" type="button" onClick={() => setDropdown(!dropdown)}>
                         {username ? (
                             <Avatar name={username} size={40} round={true} />
                         ) : (

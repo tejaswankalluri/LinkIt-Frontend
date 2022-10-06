@@ -23,7 +23,7 @@ function LinkCards({ link, editlink, cid, deletelink, cancel }) {
         <div className="w-full mt-5 max-w-sm bg-white rounded-lg border border-gray-200 shadow-md">
             <div className="flex justify-end px-4 pt-4">
                 <button
-                    onClick={() => setToggle(toggle ? false : true)}
+                    onClick={() => setToggle(!toggle)}
                     className="inline-block text-gray-500  hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 rounded-lg text-sm p-1.5"
                     type="button"
                 >
@@ -39,7 +39,7 @@ function LinkCards({ link, editlink, cid, deletelink, cancel }) {
                     </svg>
                 </button>
                 <div
-                    onClick={() => setToggle(toggle ? false : true)}
+                    onClick={() => setToggle(!toggle)}
                     className={
                         'z-10 w-44 text-base list-none bg-white rounded divide-y divide-gray-100 shadow absolute translate-y-8 ' +
                         (toggle ? '' : 'hidden')
@@ -48,7 +48,7 @@ function LinkCards({ link, editlink, cid, deletelink, cancel }) {
                     <ul className="py-1" aria-labelledby="dropdownButton">
                         <li>
                             <a
-                                onClick={() => setEditToggle(editToggle ? false : true)}
+                                onClick={() => setEditToggle(!editToggle)}
                                 className="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100 cursor-pointer"
                             >
                                 Edit
@@ -109,7 +109,7 @@ function LinkCards({ link, editlink, cid, deletelink, cancel }) {
                         <div className="flex space-x-3 mt-2">
                             <a
                                 onClick={() => {
-                                    setEditToggle(editToggle ? false : true);
+                                    setEditToggle(!editToggle);
                                     cancel();
                                 }}
                                 className="inline-flex items-center py-2 px-4 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 cursor-pointer"
