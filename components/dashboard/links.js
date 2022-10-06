@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import LinkCards from './linkCards';
 import axiosInstance from '../../util/axiosInstance';
 function Links(props) {
-    const [links, setLinks] = useState(props.links);
+    const [links, setLinks] = useState(props.links || []);
     const editlinks = (cid, link) => {
         let newarr = [...links];
         newarr[cid] = link;
