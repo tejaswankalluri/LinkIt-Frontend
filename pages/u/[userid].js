@@ -19,7 +19,7 @@ function Cards({ link, name }) {
 }
 
 function LinkitPage() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState(null);
   const router = useRouter();
   const { userid } = router.query;
   useEffect(() => {
