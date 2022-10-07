@@ -32,7 +32,8 @@ function LinkitPage() {
       } catch (err) {
         console.log(err);
       }
-    };
+    }
+    fetchdata();
   }, []);
   return (
     <section className="flex items-center justify-center flex-col bg-darkbgvoilet w-full min-h-screen text-white">
