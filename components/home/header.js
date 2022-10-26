@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Link from 'next/link';
 function Header() {
     return (
         <section className="text-center mx-auto mt-10 flex flex-col items-center">
@@ -17,7 +17,9 @@ function Header() {
                 Managing Social media Links is hard. but not with Linkit, <br /> You will get a one link to share your
                 whole social media
             </p>
-            <button className="bg-voilet text-white font-bold px-5 py-3 rounded-3xl mt-5 w-fit">Get started</button>
+            <Link href={'/signin'}>
+                <button className="bg-voilet text-white font-bold px-5 py-3 rounded-3xl mt-5 w-fit">Get started</button>
+            </Link>
         </section>
     );
 }

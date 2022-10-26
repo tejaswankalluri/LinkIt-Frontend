@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 function Swapcards() {
     return (
         <section className="py-32" id="about">
@@ -16,9 +17,11 @@ function Swapcards() {
                         Connect your socials, website, store, videos, music, podcast, events and more. It all comes
                         together in a link in bio landing page designed to convert.
                     </p>
-                    <button className="bg-voilet text-white font-bold px-5 py-3 rounded-3xl mt-5 w-fit">
-                        Get started
-                    </button>
+                    <Link href={'/signin'}>
+                        <button className="bg-voilet text-white font-bold px-5 py-3 rounded-3xl mt-5 w-fit">
+                            Get started
+                        </button>
+                    </Link>
                 </div>
                 <Image
                     src={
@@ -52,9 +55,11 @@ function Swapcards() {
                         Add your unique LinkIt URL to all the platforms and places you find your audience. Then use your
                         QR code to drive your offline traffic online.
                     </p>
-                    <button className="bg-voilet text-white font-bold px-5 py-3 rounded-3xl mt-5 w-fit">
-                        Get started
-                    </button>
+                    <Link href={'/signin'}>
+                        <button className="bg-voilet text-white font-bold px-5 py-3 rounded-3xl mt-5 w-fit">
+                            Get started
+                        </button>
+                    </Link>
                 </div>
             </div>
         </section>
