@@ -49,7 +49,7 @@ function Links(props) {
 
     return (
         <>
-            <h1 className="text-2xl text-center font-semibold mt-20">Your Links</h1>
+            <h1 className="text-3xl text-center font-semibold mt-20">Your Links</h1>
             <div className="flex w-full justify-center mt-10 md:justify-start">
                 <button
                     onClick={addlink}

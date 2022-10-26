@@ -30,35 +30,40 @@ function Dashboard() {
     }, []);
     return (
         <>
-            <DashNavbar username={data.username} />
-            {data ? (
-                <section className="my-10 container mx-auto">
-                    <div className="text-darkbgvoilet text-3xl text-center md:text-5xl font-extrabold capitalize md:text-left">
-                        Howdy {data.username},
-                    </div>
-                    <Link href={`/u/${data.username}`}>
-                        <div className="flex w-full justify-center mt-10 md:justify-end">
-                            <button
-                                type="button"
-                                className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
-                            >
-                                Your Public Link
-                            </button>
+            <DashNavbar username={data.username} avatar={data.avatar} />
+            <main className="bg-darkbgvoilet min-h-screen">
+                <section className="py-10 container mx-auto text-white">
+                    {data ? (
+                        <>
+                            <div className="flex flex-col md:flex-row w-full mt-10 gap-10 items-center md:justify-between">
+                                <div className="text-4xl text-center md:text-5xl font-extrabold capitalize md:text-left">
+                                    Howdy {data.username},
+                                </div>
+                                <Link href={`/u/${data.username}`} className="inline">
+                                    <button
+                                        type="button"
+                                        className="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2"
+                                    >
+                                        Your Public Link
+                                    </button>
+                                </Link>
+                            </div>
+
+                            <Links links={data.links} />
+                        </>
+                    ) : (
+                        // loadin skeleton
+                        <div className="flex w-full justify-center md:justify-start">
+                            <div className="w-96 animate-pulse">
+                                <div className="h-16 bg-lightbggrape rounded-md w-full mb-4"></div>
+                                <div className="h-2 bg-lightbggrape rounded-full max-w-[360px] mb-2.5"></div>
+                                <div className="h-2 bg-lightbggrape rounded-full mb-2.5"></div>
+                                <div className="h-2 bg-lightbggrape rounded-full max-w-[330px] mb-2.5"></div>
+                            </div>
                         </div>
-                    </Link>
-                    <Links links={data.links} />
+                    )}
                 </section>
-            ) : (
-                // loadin skeleton
-                <section className="my-10 container mx-auto">
-                    <div role="status" className="max-w-sm animate-pulse">
-                        <div className="h-16 bg-gray-300 rounded-md w-full mb-4"></div>
-                        <div className="h-2 bg-gray-200 rounded-full max-w-[360px] mb-2.5"></div>
-                        <div className="h-2 bg-gray-200 rounded-full mb-2.5"></div>
-                        <div className="h-2 bg-gray-200 rounded-full max-w-[330px] mb-2.5"></div>
-                    </div>
-                </section>
-            )}
+            </main>
         </>
     );
 }

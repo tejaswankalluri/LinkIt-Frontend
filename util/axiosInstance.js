@@ -14,6 +14,9 @@ axiosInstance.interceptors.request.use(async (req) => {
         throw new axios.Cancel('login needed');
     }
     const user = jwtDecode(authToken.split(' ')[1]);
+    if (!user) {
+        localStorage.removeItem('token');
+    }
     const isExpired = dayjs.unix(user.exp).diff(dayjs()) < 1;
     if (isExpired) {
         localStorage.removeItem('token');

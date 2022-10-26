@@ -43,7 +43,7 @@ function LinkitPage() {
             {data ? (
                 <>
                     <div className="pt-10 mb-5">
-                        <Avatar name={data.username} round={true} />
+                        <Avatar name={data.username} src={data.avatar} round={true} />
                         <p className="font-extrabold text-center capitalize mt-3 text-xl">{data.username}</p>
                     </div>
                     {data.links.map((linkd, id) => (
